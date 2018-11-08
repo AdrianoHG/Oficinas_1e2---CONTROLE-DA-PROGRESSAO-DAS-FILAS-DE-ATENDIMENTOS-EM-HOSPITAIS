@@ -27,13 +27,13 @@ body{
 {
   position:relative;
   width:320px;
-  height:270px;
+  height:300px;
 }
 #area_insere
 {
   position:relative;
   width:320px;
-  height:500px;
+  height700px;
 }
 #area_up
 {
@@ -140,7 +140,7 @@ input[type=text]{
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
     border:1px solid black;
-    width:150px
+    width:180px
 
 }
 input[type=number]{   
@@ -152,7 +152,7 @@ input[type=number]{
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
     border:1px solid black;
-    width:150px
+     width:180px
 
 }
 input[type=password]{   
@@ -164,7 +164,7 @@ input[type=password]{
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
     border:1px solid black;
-    width:150px
+     width:180px
 }
 input[type=date]{   
     border-radius:4px;
@@ -175,7 +175,7 @@ input[type=date]{
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
     border:1px solid black;
-    width:150px
+  width:180px
 }
 input[type=time]{   
     border-radius:4px;
@@ -186,7 +186,7 @@ input[type=time]{
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
     border:1px solid black;
-    width:150px
+   width:180px
 }
 input[type=select]{   
     border-radius:4px;
@@ -196,10 +196,23 @@ input[type=select]{
     -moz-box-shadow: 1px 1px 2px #333333;
     -webkit-box-shadow: 1px 1px 2px #333333;
     background: #cccccc; 
-    border:15px solid black;
-    width:150px
+    border:1px solid black;
+     width:180px
 }
+select{   
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #cccccc;
+    color: #ccccccc; 
+    height: 40px;
+    border:1px solid black;
+   width:180px
 
+}
 textarea{
     border: 1px solid black;
     background:#cccccc;
@@ -319,3 +332,9 @@ input[type=select]:hover{
 
   background-color:#F00;
   }
+  .icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}

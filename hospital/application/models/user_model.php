@@ -10,48 +10,53 @@ class User_model extends CI_Model {
         return $this->db->get($tabela);
     }
 
-    public function get_one($tabela, $id) {
-        $this->db->where('id', $id);
+    public function get_one_paciente($tabela, $id) {
+        $this->db->where('cpf', $id);
         return $this->db->get($tabela);
     }
 
-    public function get_user($tabela, $id) {
-        $this->db->where('usuario_id', $id);
-        return $this->db->get($tabela);
-    }
-      public function data_grafico($tabela, $id) {
-        $this->db->where('usuario_id', $id);
-        $query = $this->db->get($tabela);
-        return $query->result_array();
-
-    }
-
-    public function get_user_one($tabela, $id_user, $id) {
-        $this->db->where('usuario_id', $id_user);
-        $this->db->where('usuario_id', $id);
+    public function get_pacientes($tabela, $id) {
+        $this->db->where('FK_hospital_cnpj', $id);
         return $this->db->get($tabela);
     }
 
-    public function get_total($tabela, $usuario_id) {
-        $this->db->where('usuario_id', $usuario_id);
-        $this->db->select_max('id');
+    public function get_hospital($tabela, $id) {
+        $this->db->where('cnpj', $id);
         return $this->db->get($tabela);
     }
 
-    public function delete($tabela, $id) {
-        return $this->db->delete($tabela, array('id' => $id));
+    public function get_endereco($tabela, $cnpj) {
+        $this->db->where('FK_hospital_cnpj', $cnpj);
+        return $this->db->get($tabela);
     }
 
-    public function update($tabela, $dados, $codcidade) {
-        $this->db->where('id', $codcidade);
+    public function update_paciente($tabela, $dados, $cpf) {
+        $this->db->where('cpf', $cpf);
         $update = $this->db->update($tabela, $dados);
 
         return $update;
     }
 
-    public function update_total($tabela, $total,$id) {
-        $this->db->where('usuario_id', $id);
-        $this->db->update($tabela, $total);
+    public function update_hospital($tabela, $dados, $cnpj) {
+        $this->db->where('cnpj', $cnpj);
+        $update = $this->db->update($tabela, $dados);
+
+        return $update;
+    }
+
+    public function update_endereco($tabela, $dados, $cnpj) {
+        $this->db->where('FK_hospital_cnpj', $cnpj);
+        $update = $this->db->update($tabela, $dados);
+
+        return $update;
+    }
+
+    public function delete($tabela, $id) {
+        return $this->db->delete($tabela, array('cpf' => $id));
+    }
+
+    public function apaga_hospital($tabela, $id) {
+        return $this->db->delete($tabela, array('cnpj' => $id));
     }
 
 }
