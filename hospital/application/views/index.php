@@ -37,28 +37,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </form>             
             </center>
         </div>
+        <div class="active  ">
+            <center>
+                <footer  > 
+                    <?php echo form_open_multipart('Start/view_cad_admin');
+                    ?>
+                    <input class="btn btn-group-toggle hoverable light-blue darken-4 btn-dark btn-hover" type="submit" value="Cadastrar" name="cad"><br>
+                    </form>
+                    <div class="footer-copyright">
+                        <br>
+                        <center>
+                            <div class="container">
+                                Produzido por:  <a class=" blue-darken-4-text text-lighten-3" href="http://www.linkedin.com/in/adriano-henrique-goncalves">Adriano H</a>
+                            </div>
+                        </center>
+                    </div>
+                </footer>
+            </center>
+        </div>
 
-        <div class="card-body container-fluid" id="area">
+    </body>
 
-            <br>
-            <fieldset>
-                <?php echo form_open_multipart('Start/view_cad_admin');
-                ?>
-                <input class="btn btn-group-toggle hoverable light-blue darken-4 btn-dark btn-hover" type="submit" value="Cadastrar" name="cad"><br>
-                </form>
-            </fieldset>
-        </center>
-    </div>
-</center>
-</body>
-<footer>
-    <div class="footer-copyright">
-        <br>
-        <center>
-            <div class="container">
-                Produzido por:  <a class=" blue-darken-4-text text-lighten-3" href="http://www.linkedin.com/in/adriano-henrique-goncalves">Adriano H</a>
-            </div>
-        </center>
-    </div>
-</footer>
+
+
 </html>

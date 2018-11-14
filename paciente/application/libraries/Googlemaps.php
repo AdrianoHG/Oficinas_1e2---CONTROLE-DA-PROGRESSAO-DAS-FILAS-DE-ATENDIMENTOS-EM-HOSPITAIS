@@ -23,12 +23,12 @@ class Googlemaps {
     var $adsensePosition = 'BOTTON_CENTER';    // The position of the AdUnit
     var $adsensePublisherID = '';      // Your Google AdSense publisher ID
     var $apiKey = 'AIzaSyBVRs588jPNOQCqvsCGk0v-3pFwtOIFuZ4';       // If you've got an API key you can use it by passing this parameter. Setup an API key here: https://code.google.com/apis/console
-    var $backgroundColor = '';      // A hex color value shown as the map background when tiles have not yet loaded as the user pans
+    var $backgroundColor = '#012eba';      // A hex color value shown as the map background when tiles have not yet loaded as the user pans
     var $bicyclingOverlay = TRUE;     // If set to TRUE will overlay bicycling information (ie. bike paths and suggested routes) onto the map by default 
     var $center = "-19.747710, -47.935789";  // Sets the default center location (lat/long co-ordinate or address) of the map. If defaulting to the users location set to "auto"
     var $class = '';      // A class name if wishing to style the map further through CSS. Can also be useful if wanting it to be responsive etc.
     var $cluster = TRUE;     // Whether to cluster markers
-    var $clusterGridSize = 60;      // The grid size of a cluster in pixels
+    var $clusterGridSize = 30;      // The grid size of a cluster in pixels
     var $clusterMaxZoom = '';      // The maximum zoom level that a marker can be part of a cluster
     var $clusterZoomOnClick = TRUE;      // Whether the default behaviour of clicking on a cluster is to zoom into it
     var $clusterAverageCenter = TRUE;     // Whether the center of each cluster should be the average of all markers in the cluster
@@ -53,14 +53,14 @@ class Googlemaps {
     var $language = 'portuguese';      // The map will by default load in the language of the browser. This can be overriden however here. For a full list of codes see https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
     var $loadAsynchronously = FALSE;     // Load the map and API asynchronously once the page has loaded
     var $map_div_id = "map_canvas";    // The ID of the <div></div> that is output which contains the map
-    var $map_height = "600px";     // The height of the map container. Any units (ie 'px') can be used. If no units are provided 'px' will be presumed
+    var $map_height = "400px";     // The height of the map container. Any units (ie 'px') can be used. If no units are provided 'px' will be presumed
     var $map_name = "map";     // The JS reference to the map. Currently not used but to be used in the future when multiple maps are supported
     var $map_type = "ROADMAP";    // The default MapType. Values accepted are 'HYBRID', 'ROADMAP', 'SATELLITE' or 'TERRAIN'
     var $map_types_available = array();     // The other MapTypes available for selection on the map
     var $map_width = "100%";     // The width of the map container. Any units (ie 'px') can be used. If no units are provided 'px' will be presumed
     var $maps_loaded = 0;      // Counter which keeps track of how many maps have been created to avoid standard functions being output twice
     var $mapTypeControlPosition = '';      // The position of the MapType control, eg. 'BOTTOM_RIGHT'
-    var $mapTypeControlStyle = '';      // The style of the MapType control. blank, 'DROPDOWN_MENU' or 'HORIZONTAL_BAR' values accepted.
+    var $mapTypeControlStyle = 'DROPDOWN_MENU';      // The style of the MapType control. blank, 'DROPDOWN_MENU' or 'HORIZONTAL_BAR' values accepted.
     var $minzoom = '';      // The minimum zoom level which will be displayed on the map
     var $maxzoom = '';      // The maximum zoom level which will be displayed on the map
     var $minifyJS = TRUE;     // If TRUE will run the JavaScript through Jsmin.php (this file and PHP5+ required) to minify the code
@@ -122,8 +122,8 @@ class Googlemaps {
     var $directionsEnd = "";      // The destination point (lat/long co-ordinate or address) of the directions. Set to 'auto' to default it to the users location
     var $directionsDivID = "";      // An element's ID on the page where textual directions will be output to. Leave blank if not required
     var $directionsMode = "DRIVING";     // DRIVING, WALKING or BICYCLING (US Only) - The vehicle/mode of transport to show directions for
-    var $directionsAvoidTolls = FALSE;     // Whether or not directions should avoid tolls
-    var $directionsAvoidHighways = FALSE;     // Whether or not directions should avoid highways
+    var $directionsAvoidTolls = TRUE;     // Whether or not directions should avoid tolls
+    var $directionsAvoidHighways = TRUE;     // Whether or not directions should avoid highways
     var $directionsDraggable = FALSE;     // Whether or not directions on the map are draggable
     var $directionsChanged = "";      // JavaScript to perform when directions are dragged
     var $directionsUnits = "";      // 'metric' for kilometers and meters or 'imperial for miles and feet. Leave blank and it will default to the region or country of where directions are being obtained

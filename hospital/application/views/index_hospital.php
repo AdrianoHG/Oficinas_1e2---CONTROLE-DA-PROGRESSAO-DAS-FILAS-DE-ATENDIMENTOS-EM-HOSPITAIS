@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     } else {
                         $sexo = "Feminino";
                     }
-                    $this->table->add_row($linha->nome, $linha->cpf, $sexo, $linha->idade, anchor("Hospital/atualizar/" . $linha->cpf, '<input class=" btn btn-group-toggle hoverable btn-dark light-blue darken-1 btn-hover btn-block " type="button" name="edit" value="EDITAR" >'), anchor("Hospital/delete/" . $linha->cpf, '<input class="btn btn-group-toggle hoverable btn-block red darken-4 btn-dark btn-hover " type="button" name="delete" value="Apagar" >'));
+                    $this->table->add_row($linha->nome, $linha->cpf, $sexo, $linha->idade, anchor("Hospital/atualizar/" . $linha->cpf, '<input class=" btn btn-group-toggle hoverable btn-dark light-blue darken-1 btn-hover btn-block " type="button" name="edit" value="EDITAR" >'), anchor("Hospital/delete/" . $linha->cpf, '<input  class="btn btn-group-toggle hoverable btn-block red darken-4 btn-dark btn-hover " type="button"  name="delete" value="Apagar" >'));
                 }
                 $tmpl = array(
                     'table_open' => '<table id="pacientes" class="table  table-success table-hover table-bordered table-light  table-responsive-lg  table-striped  ">',
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <?php
                     echo form_open_multipart('Start/sair/');
                     ?>
-                    <input class="btn btn-group-toggle hoverable btn-dark btn-hover red darken-1" type="submit" value="Logout" name="cad"><br>
+                    <input  class="btn btn-group-toggle hoverable btn-dark btn-hover red darken-1" type="submit" value="Logout" name="cad"><br>
                     </form>
                     <div class="footer-copyright">
                         <br>

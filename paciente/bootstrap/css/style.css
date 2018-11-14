@@ -5,8 +5,9 @@ body{
     margin:0;
 }
 #header {
-    padding:5px;
+    padding:10px;
     margin-bottom:7px;
+    border: 2px solid firebrick;
 }
 
 #header .top-header {
@@ -28,6 +29,12 @@ body{
   position:relative;
   width:320px;
   height:300px;
+}
+#area2
+{
+  position:relative;
+  width:320px;
+  height:80px;
 }
 #area_insere
 {
@@ -332,3 +339,9 @@ input[type=select]:hover{
 
   background-color:#F00;
   }
+  .icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}

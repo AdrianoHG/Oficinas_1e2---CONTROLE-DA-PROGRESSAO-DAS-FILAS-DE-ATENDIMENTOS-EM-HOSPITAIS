@@ -9,7 +9,7 @@ class Start extends CI_Controller {
         $this->load->library('parser');
         $this->load->helper('url');
         $this->load->helper('array');
-        $this->load->model('user_model');
+        $this->load->model('User_model');
         $this->load->library('table');
         $this->load->library('form_validation');
         $this->load->helper(array('form'));
@@ -21,18 +21,18 @@ class Start extends CI_Controller {
     public function index() {
         $this->googlemaps->initialize();
         $tabela = 'hospital';
-        $hospital = $this->user_model->get_all($tabela);
+        $hospital = $this->User_model->get_all($tabela);
         foreach ($hospital->result() as $linha) {
             $cnpj = $linha->cnpj;
             $nome = $linha->nome;
             $tabEndereco = "endereco";
-            $endereco = $this->user_model->get_endereco($tabEndereco, $cnpj);
+            $endereco = $this->User_model->get_endereco($tabEndereco, $cnpj);
             foreach ($endereco->result() as $end) {
                 $rua = $end->rua;
                 $numero = $end->numero;
                 $cidade = $end->cidade;
                 $bairro = $end->bairro;
-                $paciente = $this->user_model->get_pacientes("paciente", $cnpj);
+                $paciente = $this->User_model->get_pacientes("paciente", $cnpj);
                 $count = 0;
                 foreach ($paciente->result() as $p) {
                     $count = $count + 1;
@@ -43,23 +43,23 @@ class Start extends CI_Controller {
                         "Fila de espera: " . $count . " Paciente(s).";
                 $marker['animation'] = "DROP";
                 $marker['flat'] = true;
-                if ($count <= 2) {
-                    //green
-                   $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Green.png";
-                }elseif ($count >= 3 and $count < 8) {
+                if ($count <= 5) {
+                    //green  
+                    $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Green.png";
+                } elseif ($count >= 6 and $count <= 10) {
                     //yellow
-                   $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Yellow.png";
-                }elseif ($count >= 8) {
-                      //red
-                   $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Red.png";
+                    $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Yellow.png";
+                } elseif ($count >= 11) {
+                    //red
+                    $marker['icon'] = "http://individual.icons-land.com/IconsPreview/MapMarkers/PNG/Centered/64x64/MapMarker_Marker_Outside_Red.png";
                 }
-                
+
                 $this->googlemaps->add_marker($marker);
                 $count = 0;
             }
         }
         $data['map'] = $this->googlemaps->create_map();
-        $this->load->view('index', $data);
+        $this->load->view('Index', $data);
     }
 
 }

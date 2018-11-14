@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
 
     <body class="body info ">
-        <div class="col-8 row">
+        <div class="col-7 row">
             <form class="" name="paciente" method="POST">
                 <h4 class="title blue-grey-text">Novo Paciente</h4>
                 <div class="input-field col s6">
@@ -59,29 +59,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="input-field col s12">
                     <input class="btn btn-group-toggle hoverable light-blue darken-4 btn-dark btn-hover" type="submit" value="Salvar" name="enviar"><br>
+                </div>
+            </form>
+            <br>
+        </div>  
+        <div class="container container-fluid alert-danger wy-alert-danger">
+            <center>
+                <footer class="card-footer footer"> 
+                    <?php echo form_open_multipart('Start/sair/');
+                    ?>
+                    <input class="btn btn-group-toggle hoverable btn-dark btn-hover red darken-1" type="submit" value="Logout" name="cad"><br>
                     </form>
-                </div>
-
-                <br>
-                </div>  
-                <div class="container container-fluid alert-danger wy-alert-danger">
-                    <center>
-                        <footer class="card-footer footer"> 
-                            <?php echo form_open_multipart('Start/sair/');
-                            ?>
-                            <input class="btn btn-group-toggle hoverable btn-dark btn-hover red darken-1" type="submit" value="Logout" name="cad"><br>
-                            </form>
-                            <div class="footer-copyright">
-                                <br>
-                                <center>
-                                    <div class="container">
-                                        Produzido por:  <a class=" blue-darken-4-text text-lighten-3" href="http://www.linkedin.com/in/adriano-henrique-goncalves">Adriano H</a>
-                                    </div>
-                                </center>
+                    <div class="footer-copyright">
+                        <br>
+                        <center>
+                            <div class="container">
+                                Produzido por:  <a class=" blue-darken-4-text text-lighten-3" href="http://www.linkedin.com/in/adriano-henrique-goncalves">Adriano H</a>
                             </div>
-                        </footer>
-                    </center>
-                </div>
-                </body>
+                        </center>
+                    </div>
+                </footer>
+            </center>
+        </div>
+    </body>
 
-                </html>
+</html>

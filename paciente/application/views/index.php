@@ -15,13 +15,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url(); ?>bootstrap/js/jquery.js"></script>
         <script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.js"></script>
         <script src="<?php echo base_url(); ?>bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="<?php echo base_url(); ?>bootstrap/m/js/materialize.js"></script>
+        <link href="<?php echo base_url(); ?>bootstrap/m/css/materialize.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <?php echo $map['js']; ?>
     </head>
-    <body class="container">
-        <br>
-        <div class="card-body container container-fluid align-content-center modal-body focus">
-            <?php echo $map['html']; ?>
+    <body class="body  grey lighten-2">
+        <h4> Situação atual das filas nos hospitais</h4>
+        <div class="col s12">
+            <div>
+                <?php echo $map['html']; ?>
+            </div>
         </div>
+        <h6 class="black-text">Legenda: </h6>
+        <h6 class=" green darken-4">Ate 5 Pacientes</h6>
+        <h6 class=" yellow accent-4">Entre 6  e 10 Pacientes</h6>
+        <h6 class=" red darken-4">Mais de 11 Pacientes</h6>
     </body>
 
 
